@@ -16,5 +16,27 @@ spring:
         format_sql: true
     open-in-view: false
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: phucbuivan99@gmail.com
+    password: kswe rdrr zkvz neoy
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+# JWT Configuration
+jwt:
+  secret: mySecretKeyForJWTTokenGenerationMustBeAtLeast256BitsLongForSecurity
+  expiration: 86400000
+
+# App Configuration
+app:
+  reset-password:
+    frontend-url: http://localhost:5173/reset-password
+
 server:
   port: 8080
