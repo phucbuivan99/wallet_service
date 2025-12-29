@@ -3,9 +3,9 @@ spring:
     name: wallet-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/wallet_db
-    username: wallet_user
-    password: wallet_pass
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/wallet_db}
+    username: ${DB_USERNAME:wallet_user}
+    password: ${DB_PASSWORD:wallet_pass}
 
   jpa:
     hibernate:
@@ -17,10 +17,10 @@ spring:
     open-in-view: false
 
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username: phucbuivan99@gmail.com
-    password: kswe rdrr zkvz neoy
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
     properties:
       mail:
         smtp:
@@ -30,13 +30,13 @@ spring:
 
 # JWT Configuration
 jwt:
-  secret: mySecretKeyForJWTTokenGenerationMustBeAtLeast256BitsLongForSecurity
-  expiration: 86400000
+  secret: ${JWT_SECRET:mySecretKeyForJWTTokenGenerationMustBeAtLeast256BitsLongForSecurity}
+  expiration: ${JWT_EXPIRATION:86400000}
 
 # App Configuration
 app:
   reset-password:
-    frontend-url: http://localhost:5173/reset-password
+    frontend-url: ${FRONTEND_URL:http://localhost:5173/reset-password}
 
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}

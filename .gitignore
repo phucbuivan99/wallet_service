@@ -31,3 +31,18 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Environment Variables & Secrets ###
+.env
+.env.local
+.env.*.local
+application-local.yaml
+application-*.yaml
+!application.yaml
+!application-dev.yaml.example
+!application-prod.yaml.example
+
+### Secrets ###
+secrets/
+*.secret
+*.key
